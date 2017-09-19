@@ -8,7 +8,7 @@ import App from "./components/App";
 const store = createStore(reducer);
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <App/>
   </Provider>,
   document.getElementById('react-app-root')
