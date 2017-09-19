@@ -1,8 +1,11 @@
 import React from "react";
+import Header from "./Header";
 
 function App(props){
   return (
-    <div>App works</div>
+    <div>
+      <Header/>  
+    </div>
   );
 }
 
