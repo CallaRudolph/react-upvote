@@ -4,7 +4,7 @@ import MasterPost from "./MasterPost";
 
 function App(props){
   return (
-    <div>
+    <div className="container">
       <Header/>
       <MasterPost/>
     </div>
