@@ -21,8 +21,8 @@ class NewPostForm extends React.Component {
       title: _title.value,
       content: _content.value,
       timeStamp: new Moment(),
-      upvotes: null,
-      downvotes: null
+      upvotes: 0,
+      downvotes: 0
     };
     dispatch(action);
     this.props.hideFormOnSubmit();

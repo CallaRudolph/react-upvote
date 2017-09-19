@@ -9,9 +9,10 @@ function PostList(props){
       <hr/>
       {props.postList.map((post) =>
         <Post title={post.title}
-              content={post.content}
-              timeStamp={post.timeStamp}
-              key={post.id}/>
+            content={post.content}
+            timeStamp={post.timeStamp}
+            upvotes={post.upvotes}
+            key={post.id}/>
       )}
     </div>
   );
@@ -19,6 +20,6 @@ function PostList(props){
 
 PostList.propTypes = {
   postList: PropTypes.array
-}
+};
 
 export default PostList;

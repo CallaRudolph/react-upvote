@@ -7,7 +7,7 @@ describe("Post list reducer", () => {
     title: "React is a joy.",
     content: "Everyone LOVES React. It's the best thing ever. Dylan can't get enough React.",
     timeStamp: 1500000000000,
-    upvotes: null,
+    upvotes: 0,
     downvotes: null,
     id: 0,
   };
@@ -30,6 +30,15 @@ describe("Post list reducer", () => {
     };
     const futureState = [ postInfo ];
     expect(postList([], action)).toEqual([ postInfo ]);
+  });
+
+  test("should add upvote to post", () => {
+    const { title, content, timeStamp, upvotes, downvotes, id } = postInfo;
+    action = {
+      type: c.UPVOTE,
+      id: id
+    };
+    expect(postList([ postInfo ], action)).toEqual(postInfo.upvotes);
   });
 
 });
