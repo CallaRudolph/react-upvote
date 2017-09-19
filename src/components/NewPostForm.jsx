@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import c from "./../constants";
 import { v4 } from "uuid";
 import Moment from "moment";
+import PropTypes from "prop-types";
 
 class NewPostForm extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class NewPostForm extends React.Component {
       downvotes: null
     };
     dispatch(action);
+    this.props.hideFormOnSubmit();
   }
 
   render() {
@@ -47,6 +49,10 @@ class NewPostForm extends React.Component {
     );
   }
 }
+
+NewPostForm.propTypes = {
+  hideFormOnSubmit: PropTypes.func
+};
 
 NewPostForm = connect()(NewPostForm);
 

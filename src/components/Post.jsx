@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Moment from "moment";
 
 function Post(props){
   var time = props.timeStamp.format("MMM Do, h:mm a");
