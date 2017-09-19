@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import c from "./../constants";
 import { v4 } from "uuid";
+import Moment from "moment";
 
 class NewPostForm extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class NewPostForm extends React.Component {
       id: v4(),
       title: _title.value,
       content: _content.value,
-      timeStamp: new Date().getTime(),
+      timeStamp: new Moment(),
       upvotes: null,
       downvotes: null
     };
