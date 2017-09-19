@@ -1,11 +1,21 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function Post(){
+function Post(props){
   return(
     <div>
-      <p>This is a post.</p>
+      <h4>{props.title}</h4>
+      <p>{props.content}</p>
+      <p>{props.timeStamp}</p>
+      <hr/>
     </div>
   );
+}
+
+Post.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  timeStamp: PropTypes.number.isRequired
 }
 
 export default Post;

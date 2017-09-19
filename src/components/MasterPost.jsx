@@ -13,10 +13,16 @@ class MasterPost extends React.Component {
       <div>
         <h2>The landing page of fun.</h2>
         <NewPostControl/>
-        <PostList/>
+        <PostList postList = {this.props.masterPostList}/>
       </div>
     );
   }
 }
 
-export default MasterPost;
+const mapStateToProps = state => {
+  return {
+    masterPostList: state
+  };
+};
+
+export default connect(mapStateToProps)(MasterPost);
