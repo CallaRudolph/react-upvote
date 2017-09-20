@@ -14,30 +14,14 @@ export default (state = [], action) => {
         }
       ];
     case "UPVOTE":
-      // to do:
-      // find correct post
-      // retrieve upvote value
-      //
-      let newUpvotes;
-      for (let i = 0; i < state.length; i ++){
-        if (state[i].id === action.id) {
-          newUpvotes = state[i].upvotes + 1;
-          console.log(newUpvotes);
+      let tempState = state.slice();
+      for (var i = 0; i < tempState.length; i ++){
+        if (tempState[i].id === action.id) {
+          tempState[i].upvotes++;
         }
-        return state[i];
       }
-      return [
-        ...state,
-        {
-          title : title,
-          content : content,
-          timeStamp: timeStamp,
-          upvotes: newUpvotes,
-          downvotes : downvotes,
-          id : id
-        }
-      ];
+      return tempState;
     default:
-    return state;
+      return state;
   }
 };

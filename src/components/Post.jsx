@@ -10,7 +10,7 @@ function Post(props){
       <p>{props.content}</p>
       <p><em>Posted: {time}</em></p>
       <p>Upvotes: {props.upvotes}</p>
-      <Upvotes upvotes={props.upvotes}/>
+      <Upvotes post={props}/>
       <hr/>
     </div>
   );

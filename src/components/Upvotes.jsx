@@ -3,35 +3,26 @@ import { connect } from "react-redux";
 import c from "./../constants";
 import PropTypes from "prop-types";
 
-class Upvotes extends React.Component {
-  constructor(props) {
-    super(props);
-    this.addUpvote = this.addUpvote.bind(this);
-  }
+function Upvotes(props) {
 
-  addUpvote(){
-    const { dispatch } = this.props;
-
+  function addUpvote(postId){
+    const { dispatch } = props;
     const action = {
       type: c.UPVOTE,
-      upvote: this.props.upvote
+      id: postId
     };
     dispatch(action);
   }
 
-  render() {
-    return(
-      <div>
-        <button onClick={this.addUpvote}>Upvote</button>
-      </div>
-    );
-  }
+  return(
+    <div>
+      <button onClick={addUpvote(props.post.id)}>Upvote</button>
+    </div>
+  );
 }
 
 Upvotes.propTypes = {
-  upvotes: PropTypes.number.isRequired
+  post: PropTypes.object.isRequired
 };
 
-Upvotes = connect()(Upvotes);
-
-export default Upvotes;
+export default connect()(Upvotes);

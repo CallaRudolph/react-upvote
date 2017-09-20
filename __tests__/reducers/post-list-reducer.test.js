@@ -38,7 +38,15 @@ describe("Post list reducer", () => {
       type: c.UPVOTE,
       id: id
     };
-    expect(postList([ postInfo ], action)).toEqual(postInfo.upvotes);
+    const stateAfter = {
+      title: "React is a joy.",
+      content: "Everyone LOVES React. It's the best thing ever. Dylan can't get enough React.",
+      timeStamp: 1500000000000,
+      upvotes: 1,
+      downvotes: null,
+      id: 0,
+    };
+    expect(postList([ postInfo ], action)).toEqual([ stateAfter ]);
   });
 
 });
