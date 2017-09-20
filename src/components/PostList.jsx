@@ -12,6 +12,7 @@ function PostList(props){
             content={post.content}
             timeStamp={post.timeStamp}
             upvotes={post.upvotes}
+            post={post}
             key={post.id}/>
       )}
     </div>

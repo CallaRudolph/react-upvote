@@ -16,7 +16,7 @@ function Upvotes(props) {
 
   return(
     <div>
-      <button onClick={addUpvote(props.post.id)}>Upvote</button>
+      <button onClick={() => {addUpvote(props.post.id)}}>Upvote</button>
     </div>
   );
 }

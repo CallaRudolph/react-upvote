@@ -20,6 +20,7 @@ export default (state = [], action) => {
           tempState[i].upvotes++;
         }
       }
+      console.log(tempState);
       return tempState;
     default:
       return state;
