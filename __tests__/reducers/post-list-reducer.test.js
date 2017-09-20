@@ -8,7 +8,7 @@ describe("Post list reducer", () => {
     content: "Everyone LOVES React. It's the best thing ever. Dylan can't get enough React.",
     timeStamp: 1500000000000,
     upvotes: 0,
-    downvotes: null,
+    downvotes: 0,
     id: 0,
   };
 
@@ -38,15 +38,32 @@ describe("Post list reducer", () => {
       type: c.UPVOTE,
       id: id
     };
-    const stateAfter = {
+    const upAfter = {
       title: "React is a joy.",
       content: "Everyone LOVES React. It's the best thing ever. Dylan can't get enough React.",
       timeStamp: 1500000000000,
       upvotes: 1,
-      downvotes: null,
+      downvotes: 0,
       id: 0,
     };
-    expect(postList([ postInfo ], action)).toEqual([ stateAfter ]);
+    expect(postList([ postInfo ], action)).toEqual([ upAfter ]);
+  });
+
+  test("should add downvote to post", () => {
+    const { title, content, timeStamp, upvotes, downvotes, id } = postInfo;
+    action = {
+      type: c.DOWNVOTE,
+      id: id
+    };
+    const downAfter = {
+      title: "React is a joy.",
+      content: "Everyone LOVES React. It's the best thing ever. Dylan can't get enough React.",
+      timeStamp: 1500000000000,
+      upvotes: 1,
+      downvotes: 1,
+      id: 0,
+    };
+    expect(postList([ postInfo ], action)).toEqual([ downAfter ]);
   });
 
 });

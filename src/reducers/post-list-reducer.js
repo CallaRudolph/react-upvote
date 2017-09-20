@@ -14,13 +14,21 @@ export default (state = [], action) => {
         }
       ];
     case "UPVOTE":
-      let tempState = state.slice();
-      for (var i = 0; i < tempState.length; i ++){
-        if (tempState[i].id === action.id) {
-          tempState[i].upvotes++;
+      let upState = state.slice();
+      for (var i = 0; i < upState.length; i ++){
+        if (upState[i].id === action.id) {
+          upState[i].upvotes++;
         }
       }
-      return tempState;
+      return upState;
+    case "DOWNVOTE":
+      let downState = state.slice();
+      for (var i = 0; i < downState.length; i ++){
+        if (downState[i].id === action.id) {
+          downState[i].downvotes++;
+        }
+      }
+      return downState;
     default:
       return state;
   }
