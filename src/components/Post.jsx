@@ -11,7 +11,7 @@ function Post(props){
       <p>{props.content}</p>
       <p><em>Posted: {time}</em></p>
       <p>Upvotes: {props.upvotes}</p>
-      <Upvotes post={props.post}/>
+      <Upvotes id={props.id}/>
       <hr/>
     </div>
   );
@@ -22,7 +22,7 @@ Post.propTypes = {
   content: PropTypes.string.isRequired,
   timeStamp: PropTypes.object.isRequired,
   upvotes: PropTypes.number.isRequired,
-  post: PropTypes.object.isRequired
+  id: PropTypes.string.isRequired
 };
 
 export default connect()(Post);

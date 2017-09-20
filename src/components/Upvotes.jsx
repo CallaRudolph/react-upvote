@@ -16,13 +16,13 @@ function Upvotes(props) {
 
   return(
     <div>
-      <button onClick={() => {addUpvote(props.post.id)}}>Upvote</button>
+      <button onClick={() => {addUpvote(props.id)}}>Upvote</button>
     </div>
   );
 }
 
 Upvotes.propTypes = {
-  post: PropTypes.object.isRequired
+  id: PropTypes.string.isRequired
 };
 
 export default connect()(Upvotes);
