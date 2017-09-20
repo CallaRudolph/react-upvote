@@ -4,9 +4,6 @@ import c from "./../constants";
 import PropTypes from "prop-types";
 
 function Downvotes(props) {
-  // var downStyle = {
-  //   float: "right"
-  // }
 
   function addDownvote(postId) {
     const { dispatch } = props;
@@ -18,7 +15,7 @@ function Downvotes(props) {
   }
 
   return(
-    <div style={downStyle}>
+    <div>
       <p>Downvotes: {props.downvotes}</p>
       <button onClick={() => {addDownvote(props.id)}}>Downvote</button>
     </div>

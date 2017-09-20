@@ -4,9 +4,6 @@ import c from "./../constants";
 import PropTypes from "prop-types";
 
 function Upvotes(props) {
-  // var upStyle = {
-  //   float: "right"
-  // }
 
   function addUpvote(postId){
     const { dispatch } = props;
@@ -18,7 +15,7 @@ function Upvotes(props) {
   }
 
   return(
-    <div style={upStyle}>
+    <div>
       <p>Upvotes: {props.upvotes}</p>
       <button onClick={() => {addUpvote(props.id)}}>Upvote</button>
     </div>
