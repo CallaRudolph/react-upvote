@@ -2,7 +2,6 @@ import React from "react";
 import Post from "./Post";
 import PropTypes from "prop-types";
 
-
 function PostList(props){
   return(
     <div>
@@ -14,14 +13,16 @@ function PostList(props){
             upvotes={post.upvotes}
             downvotes={post.downvotes}
             key={post.id}
-            id={post.id}/>
+            id={post.id}
+            currentRoute={props.currentRoute}/>
       )}
     </div>
   );
 }
 
 PostList.propTypes = {
-  postList: PropTypes.array
+  postList: PropTypes.array,
+  currentRoute: PropTypes.string
 };
 
 export default PostList;

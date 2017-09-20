@@ -9,11 +9,13 @@ class MasterPost extends React.Component {
   }
 
   render() {
+      console.log(this.props.location.pathname);
     return(
       <div>
         <h2>The landing page of fun.</h2>
         <NewPostControl/>
-        <PostList postList = {this.props.masterPostList}/>
+        <PostList postList = {this.props.masterPostList}
+                  currentRoute= {this.props.location.pathname} />
       </div>
     );
   }
